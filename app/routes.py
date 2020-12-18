@@ -2,26 +2,25 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
 #homepage
 @app.route('/')
 def homepage():
-    return "This is the homepage!"
+    return "<h1 style='color:blue'>Homepage!</h1>"
 
-#comments page
+#photos page
 @app.route('/photos')
-def comments():
-    return "This is the photos page!"
+def photos():
+    return "<h1 style='color:blue'>Photos!</h1>"
 
 #blog page
 @app.route('/blogs')
-def comments():
-    return "This is the photos page!"
+def blog():
+    return "<h1 style='color:blue'>Blogs!</h1>"
 
 #contact page
 @app.route('/contact')
-def comments():
-    return "This is the photos page!"
+def contact():
+    return "<h1 style='color:blue'>Contact me!</h1>"
 
 
 #errors
@@ -48,4 +47,5 @@ def FUN_413(error):
 
 
 if __name__ == '__main__':
-    app.run(Debug=True)
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.run(debug=True, host='0.0.0.0')
